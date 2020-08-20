@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>login</h2>
+        {% if error %}
+            <p>Error: {{ error }}</p>
+        {% endif %}
+        <form action="" method="POST">
+            <dl>
+                <dt>Username:</dt>
+                <dd>
+                    <input type="text" name="username" value="{{ request.form.username}}">
+                </dd>
+                <dt>Password:</dt>
+                <dd><input type="password" name="password" value="{{ request.form.password }}"></dd>
+            </dl>
+            <p><input type="submit" value="Login"></p>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <meta charset='utf-8'>
+     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+     <title>Message Flashing</title>
+ </head>
+ <body> 
+ {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li>{{ messages }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+{% endwith %}
+<h2>Flask Message Flashing Example</h2>
+<p>Do you want to <a href="{{ url_for('login')}}"><b>Log in?</b></a></p>
+</body>
+</html>
