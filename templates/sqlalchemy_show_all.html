@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQLALchemy</title>
+</head>
+<body>
+    <h3>
+        <a href="{{ url_for('show_all') }}">
+            SQLALchemy example
+        </a>
+    </h3>
+    <hr/>
+    {% for message in get_flashed_messages() %}
+        {{ message }}
+    {% endfor %}
+
+    <h3>Students (<a href="{{ url_for('new') }}">Add new student</a>)</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Address</th>
+                <th>Pin</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <th>{{ student.name }}</th>
+                <th>{{ student.city }}</th>
+                <th>{{ student.addr }}</th>
+                <th>{{ student.pin }}</th>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
